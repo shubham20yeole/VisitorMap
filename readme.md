@@ -2,6 +2,13 @@
 
 ****Project URL: http://resumeselector.herokuapp.com/****
 
+**This project highlights people on google map who has previously visited my other projects or websites as followes**
+http://shubham-great-livings.herokuapp.com
+https://java-nodejs-blog.herokuapp.com
+http://resumeselector.herokuapp.com
+http://shubham-great-livings.herokuapp.com/timetable
+https://shubhamtwilio.herokuapp.com
+
 1. create a folder for your app.
 2. open node cmd and go to that folder.
 3. run command 'npm init'
@@ -22,7 +29,6 @@
 ```nodejs
 var express = require('express');
 var SparkPost = require('sparkpost');
-var sp = new SparkPost('#####################################');
 var port = process.env.PORT || 3000
 var bodyParser = require('body-parser');
 var path = require('path');
@@ -57,78 +63,34 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.static(path.join(__dirname)));
 ```
 
-**14. Define FTP CONNECTION**
+**14. Define DATABASE CONNECTION**
 >>
 ```nodejs
-var JSFtp = require("jsftp");
-var fs = require('fs');
-var config = {
-  host: 'ftp.***********.com',
-  port: 21,
-  user: '***********',
-  password: '***********'
-}
+var collections = ["users", "blog", "comments", "property", "images", "notification", "bookmark", "messages","timetable", "timetablecategory", "timetablequestion", "resume", "skills", "locations"];
+var db = mongojs('mongodb://********:**************@******.mlab.com:*******/********', collections);
 ```
 
-**15. Utilize Multiparty for accessing images from the frontendc**
+**15. Following method sends all users to the frontend who have previously visited my other websites**
 >>
 ```nodejs
-var fs = require('fs');
-var multiparty = require('connect-multiparty'),
-  multipartyMiddleware = multiparty();
-  app.use(multipartyMiddleware);
-    app.use(function(req, res, next){
-      console.log( req.path + "token:" + req.query.access_token)
-      fs.appendFile('logs.txt', req.path + "token:" + req.query.access_token+'', 
-        function(err){
-          next(); 
-        });
+app.get('/', function(req, res){  
+var pageno = Number(0);  
+  db.locations.find(function (err, locs) {
+      res.render("visitormap.ejs",{locs: locs});
+  })
+});
+```
+
+**16. Following method is invoked when admin hover over the marker on google map through jQuery (This method returns a object based of id of its own)**
+>>
+```nodejs
+app.post('/searchLocation', function(req, res) {
+  var id = req.body.id;
+  var ObjectID = require('mongodb').ObjectID;
+  var o_id = new ObjectID(id);
+   db.locations.findOne({ '_id': o_id}, function (err, location) {
+    res.send(location);
   });
-```
-
-**16. Write upload method to store resume on server using ftp**
->>
-```nodejs
-app.post('/upload', function(req, res){       
-  var file = req.files.file;
-  var filepath = file.path;
-  var fullname = req.body.fullname;
-  var email = req.body.email;
-  var timestamp = new Date().valueOf();
-  var Client = require('ftp');
-  var date = new Date();
-  var datetime = (date.getMonth()+1)+" / "+date.getDate()+" / "+date.getFullYear()+" at "+date.getHours()+":"+date.getMinutes();
-  let PDFParser = require("pdf2json");
-  let pdfParser = new PDFParser(this,1);
-  pdfParser.loadPDF(file.path);         
-  pdfParser.on("pdfParser_dataError", errData => console.error(errData.parserError) );
-  pdfParser.on("pdfParser_dataReady", pdfData => {
-  var resumeContent = pdfParser.getRawTextContent();
-      var c = new Client();
-      c.on('ready', function() {
-        c.put(file.path, 'htdocs/resume/shubham-resume-selector-project-'+timestamp+"-"+file.originalFilename, function(err) {
-          if (err) throw err;
-          c.end();
-        });
-      });
-      c.connect(config);
-      var resumeurl = 'http://shubhamyeole.byethost8.com/resume/shubham-resume-selector-project-'+timestamp+"-"+file.originalFilename;
-      var newResume = {
-        fullname: fullname,
-        email: email,
-        filename: file.originalFilename,
-        resume: resumeurl,
-        timestamp: timestamp,
-        datetime: datetime,
-        resumetext: resumeContent
-      }
-      db.resume.insert(newResume, function(err, result){
-        if(err){console.log(err);}
-         db.resume.find(function (err, resume) {
-            res.render("index.ejs", {message:"Thank you for submitting your Resume. We will review your application and contact you shortly.", resumecount: resume.length});
-          })        
-        });
-      });   
 });
 ```
 
