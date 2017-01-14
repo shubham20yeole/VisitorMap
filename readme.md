@@ -2,7 +2,7 @@
 
 ****Project URL: http://resumeselector.herokuapp.com/****
 
-**This project highlights people on google map who has previously visited my other projects or websites as followes**
+**This project highlights people on google map who has previously visited my other projects or websites as follows**
 
 http://shubham-great-livings.herokuapp.com
 
