@@ -4,15 +4,15 @@
 
 **This project highlights people on google map who previously visited my other projects or websites as follows:**
 
-http://shubham-great-livings.herokuapp.com
+REAL ESTATE WEBSITE: http://shubham-great-livings.herokuapp.com
 
-https://java-nodejs-blog.herokuapp.com
+BLOG: https://java-nodejs-blog.herokuapp.com
 
-http://resumeselector.herokuapp.com
+RESUME SELECTOR: http://resumeselector.herokuapp.com
 
-http://shubham-great-livings.herokuapp.com/timetable
+TASK MANAGER: http://shubham-great-livings.herokuapp.com/timetable
 
-https://shubhamtwilio.herokuapp.com
+SMS SERVICE: https://shubhamtwilio.herokuapp.com
 
 1. create a folder for your app.
 2. open node cmd and go to that folder.
