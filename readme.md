@@ -2,7 +2,7 @@
 
 ***THIS PROJECT IS AVAILABLE AT: https://visitersmap.herokuapp.com***
 
-**This project highlights people on google map who previously visited my other projects or websites as follows**
+**This project highlights people on google map who previously visited my other projects or websites as follows:**
 
 http://shubham-great-livings.herokuapp.com
 
