@@ -130,7 +130,7 @@ function getFormatedCode(actions) {
 </html>
  <% locs.forEach(function(locs){%>
 
-  <div ><input type="text" class="lat" style="width: 100%;" value="<%= locs.visittime %>><%= locs.re_c %>><%= locs.tt_c %>><%= locs.bb_c %>><%= locs.rs_c %>><%= locs.re_task %>><%= locs.tt_task %>><%= locs.bb_task %>><%= locs.rs_task %>><%= locs.long %>><%= locs.lat %>><%= locs._id %>">
+  <div ><input type="text" class="lat" style="width: 100%; display: none;" value="<%= locs.visittime %>><%= locs.re_c %>><%= locs.tt_c %>><%= locs.bb_c %>><%= locs.rs_c %>><%= locs.re_task %>><%= locs.tt_task %>><%= locs.bb_task %>><%= locs.rs_task %>><%= locs.long %>><%= locs.lat %>><%= locs._id %>">
   </div>
             
   <%}) %>

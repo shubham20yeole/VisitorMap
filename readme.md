@@ -14,6 +14,8 @@ TASK MANAGER: http://shubham-great-livings.herokuapp.com/timetable
 
 SMS SERVICE: https://shubhamtwilio.herokuapp.com
 
+**EASY STEPS TO CREATE AN APPLICATION WITH GOOGLE MAP**
+
 1. create a folder for your app.
 2. open node cmd and go to that folder.
 3. run command 'npm init'
