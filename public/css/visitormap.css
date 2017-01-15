@@ -4,7 +4,7 @@ body{
    background-repeat: no-repeat;
    background-size: 100% 100%;*/
 }
-.header{
+/*.header{
  position: fixed;
   right: 0;
   top: 0;
@@ -17,7 +17,7 @@ body{
   bottom: 0;
   left: 0;
   text-align: center;
-}
+}*/
 #heading{font-size: 25px; font-weight: bold; background-color: #FF5722; color: #FBE9E7; padding: 2%;}
 #resultcount{color: #e6f5ee; background-color: #099c5d; font-size: 1.5em; font-weight: bold;}
 #resultcount{padding: 1%; font-weight: bold;}
