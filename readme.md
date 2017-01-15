@@ -1,6 +1,6 @@
 **Welcome to SHUBHAM RESUME FILTER project.**
 
-***THIS PROJECT IS AVAILABLE AT: https://visitersmap.herokuapp.com***
+***THIS PROJECT IS AVAILABLE AT: https://visitorsgooglemap.herokuapp.com/***
 
 **This project highlights people on google map who previously visited my other projects or websites as follows:**
 

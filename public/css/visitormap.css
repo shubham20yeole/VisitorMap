@@ -75,9 +75,9 @@ text-align:right;
 a{cursor: pointer;}
 .col-md-4{text-align: left; font-weight: bold;}
 .col-md-2{text-align: right;}
-.col-md-6{text-align: right;}
+.col-md-6, .col-md-3{text-align: right;}
 span{color: #607D8B}
 .left{text-align: left; float: left;}
 .right{text-align: right; float: right;}
-.cont{min-width: 100%; min-height: 200px;}
+.cont{min-width: 100%; min-height: 150px;}
 .row{border-radius: 10px; border-color: black; }
