@@ -5,8 +5,8 @@ body{
    background-size: 100% 100%;*/
 }
 #heading{font-size: 25px; font-weight: bold; background-color: #FF5722; color: #FBE9E7; padding: 2%;}
-#resultcount{color: #e6f5ee; background-color: #099c5d; font-size: 2em; font-weight: bold;}
-#resultcount{padding: 2%; font-weight: bold;}
+#resultcount{color: #e6f5ee; background-color: #099c5d; font-size: 1.5em; font-weight: bold;}
+#resultcount{padding: 1%; font-weight: bold;}
 #awsdiv{
   width: 95%;
   margin-top: 50px; 
