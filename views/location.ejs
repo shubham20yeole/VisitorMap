@@ -92,10 +92,10 @@
           var id = tag;
     $.post( "searchLocation", { id: id})
     .done(function( location ) {    
-        $( "#lodardiv" ).html('<img src="images/load.gif" width=170" height="170">');
+        $( "#lodardiv" ).html('<img src="images/load.gif" width=100" height="100">');
          setTimeout(function(){
             $("#final").show();
-           $( "#lodardiv" ).html('<img src="images/done.jpg" width=70" height="70"> <span id="msg">Searched successful<span> </p>');
+           $( "#lodardiv" ).html('<img src="images/done.jpg" width=70" height="70"> <span id="msg">Search successful<span> </p>');
             var staddress = location.fulladdress;  
             $('#fre').text(location.visittime);
             $('#re-v').text(location.re_c);
