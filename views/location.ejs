@@ -7,7 +7,7 @@
 <body onload="initialize()">
   <div id="default" style="width:100%; height:70%"></div>
     <% locs.forEach(function(locs){%>
-      <div><input type="text" class="lat" style="width: 100%; display: none;" value="<%= locs.visittime %>><%= locs.re_c %>><%= locs.tt_c %>><%= locs.bb_c %>><%= locs.rs_c %>><%= locs.re_task %>><%= locs.tt_task %>><%= locs.bb_task %>><%= locs.rs_task %>><%= locs.long %>><%= locs.lat %>><%= locs._id %>"></div>
+      <div><input type="text" class="lat" style="width: 100%; display: none;" value="<%= locs.visittime %>><%= locs.re_c %>><%= locs.tt_c %>><%= locs.bb_c %>><%= locs.rs_c %>><%= locs.re_task %>><%= locs.tt_task %>><%= locs.bb_task %>><%= locs.rs_task %>><%= locs.long %>><%= locs.lat %>><%= locs._id %>><%= locs.mm_c %>><%= locs.mm_task %>"></div>
     <%}) %>
   </body>
 </html>
