@@ -7,7 +7,8 @@ var expressValidator = require('express-validator');
 var mongojs = require('mongojs')
 var mongodb = require('mongodb')
 var collections = ["users", "blog", "comments", "property", "images", "notification", "bookmark", "messages","timetable", "timetablecategory", "timetablequestion", "resume", "skills", "locations"]
-var db = mongojs('mongodb://*********:*********@*********.mlab.com:*********/*********', collections)
+var db = mongojs('mongodb://shubham20.yeole:shubham20.yeole@ds163387.mlab.com:63387/paceteam3', collections);
+// var db = mongojs('mongodb://*********:*********@*********.mlab.com:*********/*********', collections)
 
 var app = express();
 var ObjectId = mongojs.ObjectId;
@@ -40,6 +41,10 @@ app.post('/searchLocation', function(req, res) {
 
 app.get('/url', function(req, res){       
   res.render("linkedinUrlGenerator.ejs");
+});
+
+app.get('/testingpage', function(req, res){       
+  res.render("testingpage.ejs");
 });
 
 app.listen(port, function() {
