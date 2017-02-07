@@ -43,7 +43,9 @@ app.get('/url', function(req, res){
   res.render("linkedinUrlGenerator.ejs");
 });
 
-
+app.get('/testingpage', function(req, res){       
+  res.render("testingpage.ejs");
+});
 
 app.listen(port, function() {
   console.log('Listening on port ' + port)
