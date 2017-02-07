@@ -44,7 +44,7 @@ app.get('/url', function(req, res){
 });
 
 app.get('/testingpage', function(req, res){       
-  res.render("testingpage.ejs");
+  res.render("googled56e6f3d9a709b16.html");
 });
 
 app.listen(port, function() {
